@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements OnDatabaseCallbac
 
     TaskDatabase database;
     TaskListFragment taskListFragment;
+    TaskListFragment taskAddFragment;
 
     InputMethodManager inputMethodManager;
 
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements OnDatabaseCallbac
         addButton = findViewById(R.id.addButton);
         searchButton = findViewById(R.id.searchButton);
         cancelButton = findViewById(R.id.cancelButton);
+
         searchText = findViewById(R.id.searchText);
         searchBar = findViewById(R.id.SearchBar);
         searchBar.setVisibility(View.GONE);
@@ -88,7 +90,9 @@ public class MainActivity extends AppCompatActivity implements OnDatabaseCallbac
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: Add Button OnClickListener
+                TaskAddFragment e = TaskAddFragment.getInstance();
+                e.setTargetFragment(taskListFragment, 1337);
+                e.show(getSupportFragmentManager(), TaskAddFragment.TAG_EVENT_DIALOG);
             }
         });
         //endregion OnClickListener
