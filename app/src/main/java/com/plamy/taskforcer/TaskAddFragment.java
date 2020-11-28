@@ -5,6 +5,7 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,6 @@ public class TaskAddFragment extends DialogFragment {
         callback = (OnDatabaseCallback) getActivity();
     }
 
-    @SuppressLint("SetTextI18n")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -118,6 +118,11 @@ public class TaskAddFragment extends DialogFragment {
 
     @Override
     public void onResume() {
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        int height = (int) (dm.heightPixels * 0.95);
+        int width = ViewGroup.LayoutParams.MATCH_PARENT;
+        getDialog().getWindow().setLayout(width, height);
+
         super.onResume();
     }
 }

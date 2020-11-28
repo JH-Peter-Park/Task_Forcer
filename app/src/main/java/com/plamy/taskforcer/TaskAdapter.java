@@ -1,5 +1,6 @@
 package com.plamy.taskforcer;
 
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +52,18 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
                     }
                 }
             });
+
+            taskState.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (taskState.isChecked()) {
+                        titleText.setPaintFlags(titleText.getPaintFlags()| Paint.STRIKE_THRU_TEXT_FLAG);
+                    } else { // when content is closed
+                        titleText.setPaintFlags(0);
+                    }
+                }
+            });
+
         }
 
         private void showContent() {

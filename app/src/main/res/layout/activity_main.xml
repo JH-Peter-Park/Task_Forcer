@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorPrimary2"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -17,7 +17,8 @@
             android:id="@+id/TopBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
+            android:background="@drawable/border_gray_with_white"
+            android:elevation="10dp"
             android:gravity="end"
             android:orientation="horizontal"
             android:padding="3dp">
@@ -63,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:background="@drawable/border_gray"
+                android:background="@drawable/border_gray_round"
                 android:ems="10"
                 android:fontFamily="sans-serif-light"
                 android:hint="Search"
@@ -91,7 +92,8 @@
     <FrameLayout
         android:id="@+id/task_list_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:elevation="0dp">
 
     </FrameLayout>
 
